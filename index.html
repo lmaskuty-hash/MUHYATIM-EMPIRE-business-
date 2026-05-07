@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUHYATIM EMPIRE | Premium Nigerian Fashion House</title>
+  <meta name="description" content="Nigeria's premier luxury fashion brand. Custom tailoring, embroidery, monogram, laser engraving. Crafted in Nigeria, worn by the world.">
+  <meta name="keywords" content="Nigerian fashion, luxury tailoring, Ankara, Agbada, embroidery, monogram, MUHYATIM EMPIRE">
+  <meta property="og:title" content="MUHYATIM EMPIRE | Premium Nigerian Fashion House">
+  <meta property="og:description" content="Nigeria's premier luxury fashion brand. Custom tailoring, embroidery, monogram, laser engraving. Crafted in Nigeria, worn by the world.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#080b08">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --deep: #0E0E0E;
+      --forest: #111111;
+      --green: #1A1A1A;
+      --green-light: #2A2A2A;
+      --gold: #C5A059;
+      --gold-light: #DFB76A;
+      --gold-pale: #F0E6D2;
+      --white: #F5F5F5;
+      --muted: #A0A0A0;
+      --border: rgba(197,160,89,0.2);
+      --wa: #25D366;
+    }
+
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-family: 'Jost', sans-serif; background-color: var(--black); color: var(--white); }
+    body { overflow-x: hidden; }
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+      }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    /* Typography */
+    h1, h2, h3, .cinzel { font-family: 'Cinzel', serif; }
+    p, q, blockquote, .cormorant { font-family: 'Cormorant Garamond', serif; }
+    
+    .brand-name { font-weight: 700; letter-spacing: 0.25em; font-family: 'Cinzel', serif; }
+    .brand-muhyatim { color: var(--gold); }
+    .brand-empire { color: var(--white); }
+    .title-outline { color: transparent; -webkit-text-stroke: 1px var(--gold); }
+
+    /* Custom Cursor */
+    @media (pointer: fine) {
+      body { cursor: none; }
+      #cursor-dot { position: fixed; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
+      #cursor-ring { position: fixed; width: 38px; height: 38px; border: 1px solid var(--gold); opacity: 0.55; border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.15s ease-out; }
+      #cursor-ring.hovered { transform: translate(-50%, -50%) scale(1.7); opacity: 0.8; }
+      a, button, .svc-card, .gallery-item, .click-target { cursor: none; }
+    }
+
+    /* Global Helpers */
+    a { text-decoration: none; color: inherit; }
+    button { background: none; border: none; font-family: inherit; cursor: pointer; color: inherit; }
+    img { max-width: 100%; display: block; object-fit: cover; background-color: var(--deep); }
+    
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
+    .reveal-left { opacity: 0; transform: translateX(-36px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
+    .reveal-right { opacity: 0; transform: translateX(36px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
+    .visible { opacity: 1; transform: translate(0, 0); }
+
+    /* Floating WhatsApp */
+    .wa-float { position: fixed; bottom: 30px; right: 30px; z-index: 8000; width: 60px; height: 60px; background: var(--wa); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 24px rgba(37,211,102,0.4); animation: wa-pulse 2.5s infinite; transition: transform 0.3s; }
+    .wa-float:hover { transform: scale(1.12); }
+    .wa-float:hover + .wa-tooltip { opacity: 1; transform: translateX(0); }
+    .wa-tooltip { position: fixed; bottom: 42px; right: 105px; background: var(--wa); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; transform: translateX(10px); z-index: 8000; }
+    @keyframes wa-pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+
+    /* Navigation */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 24px 60px; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; }
+    nav.scrolled { background: rgba(10, 10, 10, 0.96); backdrop-filter: blur(20px); padding: 14px 60px; border-bottom: 1px solid var(--border); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-link { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; opacity: 0.72; transition: opacity 0.3s, color 0.3s; position: relative; }
+    .nav-link:hover { opacity: 1; color: var(--gold); }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    .btn-wa { border: 1px solid var(--wa); background: transparent; color: var(--wa); padding: 10px 20px; font-size: 10px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
+    .btn-wa:hover { background: var(--wa); color: var(--black); }
+    
+    .hamburger { display: none; width: 24px; flex-direction: column; gap: 6px; cursor: pointer; }
+    .hamburger span { display: block; width: 100%; height: 2px; background: var(--gold); transition: 0.3s; }
+    #mobileNav { position: fixed; inset: 0; background: var(--black); z-index: 9999; transform: translateX(100%); transition: transform 0.4s ease-in-out; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 32px; }
+    #mobileNav.open { transform: translateX(0); }
+    .mob-nav-link { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; }
+    .mob-close { position: absolute; top: 24px; right: 28px; font-size: 36px; color: var(--gold); background: none; border: none; cursor: pointer; }
+
+    @media (max-width: 1024px) {
+      nav { padding: 24px 28px; }
+      nav.scrolled { padding: 14px 28px; }
+      .nav-links, .nav-wa { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* Common Section */
+    section { padding: 110px 60px; max-width: 1400px; margin: 0 auto; }
+    .sec-tag { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.35em; color: var(--gold); display: flex; align-items: center; gap: 16px; margin-bottom: 12px; text-transform: uppercase; }
+    .sec-tag::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+    .sec-title { font-size: clamp(34px, 4.5vw, 60px); margin-bottom: 24px; line-height: 1.1; font-weight: 300; }
+    .sec-title i { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold); font-weight: 300; }
+    .sec-desc { font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; color: var(--muted); max-width: 480px; line-height: 1.6; }
+
+    @media (max-width: 1024px) { section { padding: 72px 28px; } }
+
+    /* Hero */
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 0 60px; overflow: hidden; background: var(--black); max-width: 100%; margin: 0; }
+    #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(var(--gold) 0.5px, transparent 0.5px); background-size: 24px 24px; opacity: 0.15; z-index: 0; mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); }
+    #hero::after { display: none; }
+    .hero-grid { display: none; }
+    .hero-content { position: relative; z-index: 10; max-width: 760px; }
+    .h1-hero { font-size: clamp(50px, 8vw, 108px); line-height: 1.1; font-weight: 300; margin-bottom: 16px; margin-top: 16px; }
+    .h1-hero .line1 { display: block; color: var(--white); letter-spacing: -0.02em; }
+    .h1-hero .line2 { display: block; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; }
+    .hero-sub { color: var(--muted); font-size: 14px; font-weight: 300; max-width: 480px; line-height: 1.6; font-family: 'Jost', sans-serif; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 40px; }
+    .btn-gold { border: 1px solid var(--gold); background: transparent; color: var(--gold); padding: 14px 28px; font-weight: 400; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s; }
+    .btn-gold:hover { background: var(--gold); color: var(--black); }
+    .btn-outline { border: 1px solid transparent; color: var(--white); background: rgba(255,255,255,0.05); padding: 14px 28px; font-weight: 400; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s; }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .btn-wa-lg { border: 1px solid var(--wa); background: transparent; color: var(--wa); padding: 14px 28px; font-weight: 400; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s; }
+    .btn-wa-lg:hover { background: var(--wa); color: var(--black); }
+    
+    .hero-stats { position: absolute; right: 60px; bottom: 60px; z-index: 10; text-align: right; display: flex; flex-direction: column; gap: 24px; }
+    .hs-item .num { font-family: 'Cinzel'; font-size: 34px; font-weight: 700; color: var(--gold); line-height: 1; }
+    .hs-item .lbl { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em; margin-top: 4px; }
+    
+    .scroll-ind { position: absolute; bottom: 40px; left: 60px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .scroll-line { width: 1px; height: 56px; background: linear-gradient(to bottom, var(--gold), transparent); animation: pulse-opacity 2s infinite; }
+    .scroll-txt { font-size: 10px; letter-spacing: 0.3em; color: var(--muted); text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg); }
+    @keyframes pulse-opacity { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+    @media (max-width: 1024px) {
+      #hero { padding: 0 28px; justify-content: center; text-align: left; }
+      .hero-stats { display: none; }
+      .scroll-ind { display: none; }
+      .h1-hero .line2 { -webkit-text-stroke: 1px var(--gold); }
+    }
+
+    /* Marquee */
+    #marquee { background: var(--deep); border-block: 1px solid var(--border); padding: 16px 0; overflow: hidden; white-space: nowrap; max-width: 100%; margin: 0; }
+    .mq-inner { display: inline-block; animation: scroll 28s linear infinite; }
+    .mq-item { display: inline-flex; align-items: center; color: var(--gold); font-family: 'Cinzel'; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; padding: 0 44px; }
+    .mq-sep { color: var(--green-light); margin-left: 44px; }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* About */
+    #about { background: var(--deep); max-width: 100%; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; max-width: 1200px; margin: 0 auto; }
+    .ab-visual { position: relative; aspect-ratio: 3/4; border: 1px solid var(--border); background: var(--green); display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    .ab-inset { position: absolute; inset: 20px; border: 1px solid rgba(201,168,76,0.15); }
+    .ab-monogram { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(80px, 8vw, 110px); color: var(--gold); opacity: 0.4; font-weight: 300; }
+    .ab-est { font-size: 10px; letter-spacing: 0.35em; color: rgba(201,168,76,0.55); margin-top: 10px; text-transform: uppercase; }
+    .ab-badge { position: absolute; bottom: -20px; right: -20px; width: 110px; height: 110px; background: var(--gold); display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .ab-badge .num { font-family: 'Cinzel'; font-size: 26px; font-weight: 900; color: var(--black); line-height: 1; }
+    .ab-badge .txt { font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); margin-top: 4px; }
+    .ab-text-col p { font-size: 19px; line-height: 1.8; color: rgba(250,248,243,0.75); margin-bottom: 24px; }
+    .gold-div { width: 56px; height: 1px; background: var(--gold); margin: 32px 0; }
+    .ab-pillars { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .pillar-row { padding: 16px 20px; border: 1px solid transparent; background: rgba(26,92,48,0.06); transition: all 0.3s; font-size: 15px; line-height: 1.6; color: var(--white); display: flex; gap: 12px; }
+    .pillar-row:hover { background: rgba(14,42,24,0.8); border: 1px solid rgba(201,168,76,0.3); }
+    .pillar-row span { color: var(--gold); }
+    @media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr; } .ab-visual { display: none; } }
+
+    /* Services */
+    #services { background: var(--black); max-width: 100%; }
+    .svc-header { display: flex; justify-content: space-between; align-items: flex-end; max-width: 1200px; margin: 0 auto 60px; flex-wrap: wrap; gap: 24px; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .svc-card { background: var(--deep); border: 1px solid var(--border); transition: transform 0.4s, border-color 0.4s; display: flex; flex-direction: column; }
+    .svc-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .svc-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .svc-img img { width: 100%; height: 100%; transition: transform 0.6s; }
+    .svc-card:hover .svc-img img { transform: scale(1.07); }
+    .svc-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(8,11,8,0.85)); }
+    .svc-badge { position: absolute; top: 16px; left: 16px; background: var(--gold); color: var(--black); padding: 4px 8px; font-size: 9px; text-transform: uppercase; font-weight: 600; letter-spacing: 0.1em; z-index: 2; }
+    .svc-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+    .svc-num { font-family: 'Cinzel'; font-size: 11px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+    .svc-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+    .svc-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+    .svc-list { list-style: none; margin-bottom: 24px; }
+    .svc-list li { font-size: 12px; color: rgba(250,248,243,0.5); padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+    .svc-list li::before { content: ''; width: 6px; height: 1px; background: var(--gold); }
+    .svc-btn { border: 1px solid var(--wa); color: var(--wa); padding: 10px; font-size: 10px; letter-spacing: 0.1em; font-weight: 400; text-transform: uppercase; text-align: center; transition: all 0.3s; }
+    .svc-card:hover .svc-btn { background: var(--wa); color: white; }
+    @media (max-width: 1024px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
+
+    /* Gallery */
+    #gallery { background: var(--deep); max-width: 100%; text-align: center; }
+    .gal-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 40px auto 60px; }
+    .gtab { border: 1px solid var(--border); color: var(--muted); padding: 8px 16px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s; }
+    .gtab.active, .gtab:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
+    .gal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 1200px; margin: 0 auto; }
+    .gal-item { aspect-ratio: 3/4; overflow: hidden; border: 1px solid var(--border); position: relative; cursor: pointer; }
+    .gal-item img { width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .gal-item:hover img { transform: scale(1.08); }
+    .gal-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 60%); opacity: 0; transition: opacity 0.4s; }
+    .gal-item:hover .gal-overlay { opacity: 1; }
+    .gal-label { position: absolute; bottom: 20px; left: 20px; text-align: left; transform: translateY(15px); opacity: 0; transition: all 0.4s; }
+    .gal-item:hover .gal-label { transform: translateY(0); opacity: 1; }
+    .gal-cat { font-size: 9px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+    .gal-name { font-family: 'Cinzel'; font-size: 15px; font-weight: 700; color: var(--white); }
+    @media (max-width: 1024px) { .gal-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .gal-grid { grid-template-columns: 1fr; } }
+
+    /* Lightbox */
+    #lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 10000; display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s; }
+    #lightbox.show { display: flex; opacity: 1; }
+    .lb-content { position: relative; max-width: 90vw; max-height: 90vh; }
+    .lb-img { max-height: 90vh; object-fit: contain; }
+    .lb-close { position: absolute; top: -40px; right: 0; color: white; font-size: 32px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .lb-prev, .lb-next { position: fixed; top: 50%; transform: translateY(-50%); color: white; font-size: 40px; background: none; border: none; cursor: pointer; padding: 20px; mix-blend-mode: difference; }
+    .lb-prev { left: 20px; } .lb-next { right: 20px; }
+
+    /* Studio */
+    #studio { background: var(--forest); position: relative; max-width: 100%; overflow: hidden; }
+    #studio::before { content: ''; position: absolute; top: -20%; right: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%); pointer-events: none; }
+    .studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; max-width: 1200px; margin: 0 auto; }
+    .mach-list { display: flex; flex-direction: column; margin-top: 40px; }
+    .mach-row { display: flex; align-items: center; margin-bottom: 1px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: var(--white); transition: color 0.3s; cursor: default; }
+    .mach-row:hover { color: var(--gold); }
+    .mach-num { font-family: 'Cinzel'; font-size: 11px; color: var(--gold); margin-right: 20px; width: 20px; }
+    .mach-bdg { margin-left: 12px; font-size: 8px; border: 1px solid var(--border); padding: 2px 6px; border-radius: 2px; color: var(--gold); letter-spacing: 0.1em; }
+    .mach-arr { margin-left: auto; color: var(--gold); opacity: 0; transform: translateX(-10px); transition: all 0.3s; }
+    .mach-row:hover .mach-arr { opacity: 1; transform: translateX(0); }
+    
+    .stu-box { background: var(--black); border: 1px solid var(--gold); padding: 48px; border-radius: 2px; display: flex; flex-direction: column; justify-content: center; }
+    .stu-q { font-size: 26px; line-height: 1.5; color: var(--white); margin-bottom: 24px; }
+    .stu-attr { font-size: 14px; color: var(--gold); font-family: 'Jost'; letter-spacing: 0.1em; font-weight: 500; }
+    .stu-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 40px; }
+    .s-bdg { border: 1px solid var(--border); padding: 8px 12px; font-size: 10px; text-transform: uppercase; color: var(--muted); transition: all 0.3s; }
+    .s-bdg:hover { border-color: var(--gold); color: var(--gold); }
+    
+    .stu-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; margin: 80px auto 0; max-width: 1000px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .ss-num { font-family: 'Cinzel'; font-size: clamp(32px, 4vw, 56px); font-weight: 900; color: var(--gold); margin-bottom: 8px; }
+    .ss-lbl { font-size: 10px; font-weight: 600; text-transform: uppercase; color: var(--white); letter-spacing: 0.15em; }
+    @media (max-width: 1024px) { .studio-grid { grid-template-columns: 1fr; } .stu-stats { grid-template-columns: repeat(2, 1fr); gap: 40px; } }
+
+    /* Why */
+    #why { background: var(--black); max-width: 100%; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .why-card { background: var(--deep); padding: 44px 28px; text-align: center; position: relative; transition: background 0.4s; display: flex; flex-direction: column; align-items: center; }
+    .why-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s; transform-origin: left; }
+    .why-card:hover { background: var(--forest); }
+    .why-card:hover::after { transform: scaleX(1); }
+    .why-icon { font-size: 32px; margin-bottom: 16px; }
+    .why-num { font-family: 'Cinzel'; font-size: 44px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+    .why-lbl { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--white); margin-bottom: 16px; letter-spacing: 0.1em; }
+    .why-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    @media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+    
+    /* Testimonials */
+    #testimonials { background: var(--forest); max-width: 100%; text-align: center; }
+    .tm-header { display: flex; flex-direction: column; align-items: center; }
+    .tm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1200px; margin: 60px auto 0; text-align: left; }
+    .tm-card { background: var(--black); border: 1px solid var(--border); padding: 36px; transition: border-color 0.4s; display: flex; flex-direction: column; }
+    .tm-card:hover { border-color: var(--gold); }
+    .tm-quote-mark { font-family: 'Cormorant Garamond'; font-size: 60px; color: var(--gold); opacity: 0.4; line-height: 0.5; margin-bottom: 16px; }
+    .tm-stars { color: var(--gold); font-size: 12px; margin-bottom: 16px; letter-spacing: 2px; }
+    .tm-text { font-size: 17px; font-weight: 300; color: rgba(250,248,243,0.85); line-height: 1.7; margin-bottom: 24px; flex: 1; }
+    .tm-author { display: flex; align-items: center; gap: 16px; }
+    .tm-av { width: 42px; height: 42px; background: var(--green); border: 1px solid var(--gold); color: var(--white); display: flex; justify-content: center; align-items: center; font-family: 'Cinzel'; font-weight: 700; font-size: 16px; border-radius: 2px; }
+    .tm-name { font-size: 12px; font-weight: 600; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+    .tm-role { font-size: 11px; color: var(--muted); }
+    @media (max-width: 1024px) { .tm-grid { grid-template-columns: 1fr; } }
+
+    /* Process */
+    #process { background: var(--deep); max-width: 100%; }
+    .pr-header { text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .pr-flow { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 80px auto 0; position: relative; gap: 40px; }
+    .pr-flow::before { content: ''; position: absolute; top: 39px; left: 10%; right: 10%; height: 1px; background: var(--border); z-index: 0; }
+    .pr-step { text-align: center; position: relative; z-index: 1; }
+    .pr-circle { width: 78px; height: 78px; margin: 0 auto 24px; background: var(--deep); border: 1px solid var(--border); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-family: 'Cinzel'; font-size: 24px; color: var(--gold); font-weight: 700; transition: all 0.4s; }
+    .pr-step:hover .pr-circle { background: var(--gold); color: var(--black); border-color: var(--gold); transform: scale(1.1); }
+    .pr-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; }
+    .pr-desc { font-size: 13px; color: var(--muted); line-height: 1.6; max-width: 240px; margin: 0 auto; }
+    @media (max-width: 1024px) { .pr-flow { grid-template-columns: repeat(2, 1fr); gap: 60px 40px; } .pr-flow::before { display: none; } }
+    @media (max-width: 640px) { .pr-flow { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* Social */
+    #social { background: var(--black); max-width: 100%; text-align: center; }
+    .soc-header { display: flex; flex-direction: column; align-items: center; margin-bottom: 60px; }
+    .soc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+    .soc-card { border: 1px solid var(--border); padding: 40px 36px; position: relative; transition: all 0.4s; background: var(--deep); display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .soc-card::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 0; height: 3px; background: var(--gold); transition: width 0.4s; }
+    .soc-card.ig::before { background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .soc-card.fb::before { background: #1877f2; }
+    .soc-card.tk::before { background: linear-gradient(90deg, #69C9D0, #fff, #EE1D52); }
+    .soc-card:hover::before { width: 100%; }
+    .soc-card:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-4px); }
+    .soc-icon { font-size: 36px; margin-bottom: 20px; }
+    .soc-name { font-family: 'Cinzel'; font-size: 20px; color: var(--white); margin-bottom: 4px; }
+    .soc-handle { font-size: 13px; color: var(--gold); margin-bottom: 20px; }
+    .soc-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 30px; flex: 1; }
+    .soc-cta { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--white); letter-spacing: 0.1em; transition: color 0.3s; }
+    .soc-card:hover .soc-cta { color: var(--gold); }
+    @media (max-width: 1024px) { .soc-grid { grid-template-columns: 1fr; } }
+
+    /* Contact / Form */
+    #contact { background: var(--deep); max-width: 100%; }
+    .ct-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; max-width: 1200px; margin: 0 auto; }
+    .ct-info .body { font-size: 19px; line-height: 1.6; color: var(--muted); margin-bottom: 32px; }
+    .ct-list { display: flex; flex-direction: column; gap: 24px; }
+    .ctl-box { display: flex; gap: 16px; align-items: flex-start; }
+    .ctl-ic { font-size: 20px; }
+    .ctl-txt .lbl { font-size: 10px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 4px; }
+    .ctl-txt .val { font-size: 16px; color: var(--white); }
+    .ctl-txt a.val { color: var(--wa); transition: opacity 0.3s; }
+    .ctl-txt a.val:hover { opacity: 0.8; }
+    
+    .ct-form-box { background: var(--black); border: 1px solid var(--border); padding: 44px; }
+    .cf-title { font-family: 'Cinzel'; font-size: 22px; color: var(--gold); margin-bottom: 8px; }
+    .cf-sub { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .f-full { grid-column: 1 / -1; margin-bottom: 20px; }
+    .f-input { width: 100%; background: var(--deep); border: 1px solid var(--border); color: var(--white); padding: 14px 16px; font-family: 'Jost'; font-size: 14px; font-weight: 300; transition: border-color 0.3s; }
+    .f-input:focus { outline: none; border-color: var(--gold); }
+    .f-input::placeholder { color: rgba(154,154,138,0.45); }
+    textarea.f-input { min-height: 110px; resize: vertical; }
+    select.f-input { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23c9a84c%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 16px top 50%; background-size: 10px auto; }
+    
+    .f-upload { border: 1px dashed rgba(201,168,76,0.3); padding: 32px; text-align: center; transition: all 0.3s; display: block; cursor: pointer; background: rgba(0,0,0,0.2); }
+    .f-upload:hover, .f-upload.dragover { border-color: var(--gold); background: rgba(197,160,89,0.05); }
+    .f-up-ic { font-size: 24px; margin-bottom: 12px; }
+    .f-up-title { font-size: 14px; color: var(--gold); margin-bottom: 4px; }
+    .f-up-hint { font-size: 12px; color: var(--muted); }
+    input[type="file"] { display: none; }
+    
+    .f-preview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+    .fp-item { position: relative; aspect-ratio: 1; border: 1px solid var(--border); overflow: hidden; }
+    .fp-item img { width: 100%; height: 100%; object-fit: cover; }
+    .fp-rm { position: absolute; top: 4px; right: 4px; background: rgba(0,0,0,0.7); color: white; border: none; width: 20px; height: 20px; border-radius: 50%; cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+    
+    .f-actions { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+    .btn-submit { flex: 1; border: 1px solid var(--gold); background: var(--black); color: var(--gold); padding: 16px; font-size: 10px; letter-spacing: 0.2em; font-weight: 400; text-transform: uppercase; transition: all 0.3s; text-align: center; cursor: pointer; }
+    .btn-submit:hover { background: var(--gold); color: var(--black); }
+    @media (max-width: 1024px) { .ct-grid { grid-template-columns: 1fr; } .ct-form-box { padding: 32px 24px; } }
+    @media (max-width: 640px) { .f-row { grid-template-columns: 1fr; } .f-preview { grid-template-columns: repeat(3, 1fr); } .f-actions { flex-direction: column; } }
+
+    /* Footer */
+    footer { background: var(--deep); padding: 72px 60px 36px; border-top: 1px solid var(--border); max-width: 100%; }
+    .ft-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; max-width: 1200px; margin: 0 auto 60px; }
+    .ft-logo { font-family: 'Cinzel'; font-size: 20px; font-weight: 900; color: var(--gold); margin-bottom: 20px; display: block; }
+    .ft-desc { font-size: 16px; color: var(--muted); line-height: 1.7; font-family: 'Cormorant Garamond'; font-style: italic; max-width: 300px; margin-bottom: 32px; }
+    .ft-social { display: flex; gap: 12px; }
+    .ft-soc-link { width: 38px; height: 38px; border: 1px solid var(--border); display: flex; justify-content: center; align-items: center; transition: all 0.3s; font-size: 16px; }
+    .ft-soc-link:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+    
+    .ft-col-title { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 24px; }
+    .ft-links { display: flex; flex-direction: column; gap: 16px; }
+    .ft-link { font-size: 13px; color: var(--white); transition: color 0.3s; }
+    .ft-link:hover { color: var(--gold); }
+    
+    .ft-bot { border-top: 1px solid var(--border); padding-top: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .ft-copy { font-size: 12px; color: var(--muted); }
+    .ft-copy span { color: var(--gold); }
+    .ft-slogan { font-family: 'Cormorant Garamond'; font-style: italic; color: var(--gold); font-size: 16px; }
+    
+    @media (max-width: 1024px) { footer { padding: 56px 28px; } .ft-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; } }
+    @media (max-width: 640px) { .ft-grid { grid-template-columns: 1fr; } .ft-bot { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+<!-- NAVBAR_CONTENT -->
+  <nav id="navbar">
+    <a href="#" class="brand-name click-target">
+      <span class="brand-muhyatim">MUHYATIM</span><span class="brand-empire"> EMPIRE</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#studio" class="nav-link">Studio</a>
+      <a href="#social" class="nav-link">Follow Us</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="https://wa.me/2349022005469?text=Hello%20MUHYATIM%20EMPIRE!" target="_blank" rel="noopener noreferrer" class="btn-wa nav-wa click-target">💬 WhatsApp Us</a>
+    
+    <div class="hamburger click-target" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div id="mobileNav">
+    <button class="mob-close click-target" onclick="toggleMenu()">×</button>
+    <a href="#about" class="mob-nav-link click-target" onclick="toggleMenu()">About</a>
+    <a href="#services" class="mob-nav-link click-target" onclick="toggleMenu()">Services</a>
+    <a href="#gallery" class="mob-nav-link click-target" onclick="toggleMenu()">Gallery</a>
+    <a href="#studio" class="mob-nav-link click-target" onclick="toggleMenu()">Studio</a>
+    <a href="#social" class="mob-nav-link click-target" onclick="toggleMenu()">Follow Us</a>
+    <a href="#contact" class="mob-nav-link click-target" onclick="toggleMenu()">Book Now</a>
+  </div>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+<!-- HERO_CONTENT -->
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="sec-tag reveal">Nigeria's Premium Fashion House</div>
+      <h1 class="h1-hero reveal">
+        <span class="line1">MUHYATIM</span>
+        <span class="line2">EMPIRE</span>
+      </h1>
+      <p class="hero-sub cormorant reveal">Crafted in Nigeria. Worn by the World.</p>
+      
+      <div class="hero-btns reveal">
+        <a href="#services" class="btn-gold click-target">Explore Services →</a>
+        <a href="https://wa.me/2349022005469?text=Hello%20MUHYATIM%20EMPIRE!" target="_blank" rel="noopener noreferrer" class="btn-wa-lg click-target">💬 WhatsApp Order</a>
+        <a href="#contact" class="btn-outline click-target">Book Consultation</a>
+      </div>
+    </div>
+    
+    <div class="hero-stats reveal">
+      <div class="hs-item">
+        <div class="num">30+</div>
+        <div class="lbl">Studio Machines</div>
+      </div>
+      <div class="hs-item">
+        <div class="num">₦50M</div>
+        <div class="lbl">Investment</div>
+      </div>
+      <div class="hs-item">
+        <div class="num">100%</div>
+        <div class="lbl">Made in Nigeria</div>
+      </div>
+    </div>
+    
+    <div class="scroll-ind reveal">
+      <div class="scroll-line"></div>
+      <div class="scroll-txt">Scroll to Explore</div>
+    </div>
+  </section>
+<!-- MARQUEE_CONTENT -->
+  <div id="marquee">
+    <div class="mq-inner">
+      <span class="mq-item">Custom Tailoring <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Embroidery <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Laser Engraving <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Ankara & Agbada <span class="mq-sep">◆</span></span>
+      <span class="mq-item">DTG Printing <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Bridal Packages <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Corporate Uniforms <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Diaspora Shipping <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Monogramming <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Ready-to-Wear <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Custom Tailoring <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Embroidery <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Laser Engraving <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Ankara & Agbada <span class="mq-sep">◆</span></span>
+      <span class="mq-item">DTG Printing <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Bridal Packages <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Corporate Uniforms <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Diaspora Shipping <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Monogramming <span class="mq-sep">◆</span></span>
+      <span class="mq-item">Ready-to-Wear <span class="mq-sep">◆</span></span>
+    </div>
+  </div>
+
+<!-- ABOUT_CONTENT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="ab-visual reveal-left">
+        <div class="ab-inset"></div>
+        <div class="ab-monogram">ME</div>
+        <div class="ab-est">Est. 2025 · Nigeria</div>
+        <div class="ab-badge">
+          <div class="num">₦50M</div>
+          <div class="txt">Studio</div>
+        </div>
+      </div>
+      
+      <div class="ab-text-col reveal-right">
+        <div class="sec-tag">Our Story</div>
+        <h2 class="sec-title">More Than a <i>Tailor</i></h2>
+        <div class="gold-div"></div>
+        
+        <p>MUHYATIM EMPIRE is not just a fashion brand — it is a movement. Born in Nigeria, built for the world. Our ₦50M studio is equipped with 30+ industrial and branding machines to produce garments that compete on the global stage.</p>
+        <p>From hand-sewn Agbada to laser-engraved accessories — every piece carries the MUHYATIM EMPIRE signature of precision, culture, and pride.</p>
+        
+        <div class="ab-pillars">
+          <div class="pillar-row"><span>✦</span> Nigerian Identity — Every design celebrates Nigerian heritage — from Ankara patterns to Aso-Oke traditions.</div>
+          <div class="pillar-row"><span>⚙</span> Industrial Precision — 30+ machines ensure every garment is made with consistent, professional finish.</div>
+          <div class="pillar-row"><span>◉</span> Global Reach — We serve clients across Nigeria and ship internationally to the African diaspora.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- SERVICES_CONTENT -->
+  <section id="services">
+    <div class="svc-header">
+      <div>
+        <div class="sec-tag reveal">What We Offer</div>
+        <h2 class="sec-title reveal">Our <i>Services</i></h2>
+      </div>
+      <p class="sec-desc reveal">From custom tailoring to full garment branding — all under one roof.</p>
+    </div>
+    
+    <div class="svc-grid">
+      <div class="svc-card click-target reveal">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80" alt="Custom Tailoring" loading="lazy">
+          <div class="svc-overlay"></div>
+          <div class="svc-badge">Signature</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">01</div>
+          <h3 class="svc-title">Custom Tailoring</h3>
+          <p class="svc-desc">Bespoke Nigerian attires sewn to your exact measurements — Agbada, Kaftan, Ankara, bridal and more.</p>
+          <ul class="svc-list">
+            <li>Agbada & Babariga</li>
+            <li>Kaftan & Senator</li>
+            <li>Ankara Styles</li>
+            <li>Bridal & Asoebi</li>
+          </ul>
+          <a href="https://wa.me/2349022005469?text=Hi!%20I%20want%20to%20order%20Custom%20Tailoring%20from%20MUHYATIM%20EMPIRE." target="_blank" rel="noopener noreferrer" class="svc-btn click-target">💬 Order via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="svc-card click-target reveal">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=600&q=80" alt="Embroidery & Monogram" loading="lazy">
+          <div class="svc-overlay"></div>
+          <div class="svc-badge">Branding</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">02</div>
+          <h3 class="svc-title">Embroidery & Monogram</h3>
+          <p class="svc-desc">Custom embroidery, monograms, and personalized lettering that stamp your identity on every garment.</p>
+          <ul class="svc-list">
+            <li>Logo Embroidery</li>
+            <li>Name Monogramming</li>
+            <li>Decorative Patterns</li>
+            <li>Rhinestone Setting</li>
+          </ul>
+          <a href="https://wa.me/2349022005469?text=Hi!%20I%20want%20Embroidery%20%26%20Monogram%20service%20from%20MUHYATIM%20EMPIRE." target="_blank" rel="noopener noreferrer" class="svc-btn click-target">💬 Order via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="svc-card click-target reveal">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80" alt="Laser Engraving & DTG Print" loading="lazy">
+          <div class="svc-overlay"></div>
+          <div class="svc-badge">Technology</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">03</div>
+          <h3 class="svc-title">Laser Engraving & DTG Print</h3>
+          <p class="svc-desc">Precision laser engraving on buckles, accessories, and tags. Full-color DTG printing on any garment.</p>
+          <ul class="svc-list">
+            <li>Leather & Metal Engraving</li>
+            <li>Direct-to-Garment Print</li>
+            <li>Heat Transfer Press</li>
+            <li>Screen Printing</li>
+          </ul>
+          <a href="https://wa.me/2349022005469?text=Hi!%20I%20want%20Laser%20Engraving%20%26%20DTG%20Printing%20from%20MUHYATIM%20EMPIRE." target="_blank" rel="noopener noreferrer" class="svc-btn click-target">💬 Order via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="svc-card click-target reveal">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Bridal & Events" loading="lazy">
+          <div class="svc-overlay"></div>
+          <div class="svc-badge">Premium</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">04</div>
+          <h3 class="svc-title">Bridal & Events</h3>
+          <p class="svc-desc">Complete wedding fashion packages — bride, groom, family sets, and full asoebi coordination.</p>
+          <ul class="svc-list">
+            <li>Traditional Bridal</li>
+            <li>Engagement Looks</li>
+            <li>Asoebi Packages</li>
+            <li>Matching Family Sets</li>
+          </ul>
+          <a href="https://wa.me/2349022005469?text=Hi!%20I%20want%20to%20enquire%20about%20Bridal%20%26%20Events%20package%20from%20MUHYATIM%20EMPIRE." target="_blank" rel="noopener noreferrer" class="svc-btn click-target">💬 Order via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="svc-card click-target reveal">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" alt="Corporate Uniforms" loading="lazy">
+          <div class="svc-overlay"></div>
+          <div class="svc-badge">Corporate</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">05</div>
+          <h3 class="svc-title">Corporate Uniforms</h3>
+          <p class="svc-desc">Branded uniforms for banks, schools, hospitals, and organizations — bulk orders with logo embroidery.</p>
+          <ul class="svc-list">
+            <li>Bulk Production</li>
+            <li>Logo Embroidery</li>
+            <li>School & Office Wears</li>
+            <li>Hospitality Uniforms</li>
+          </ul>
+          <a href="https://wa.me/2349022005469?text=Hi!%20I%20want%20Corporate%20Uniforms%20from%20MUHYATIM%20EMPIRE." target="_blank" rel="noopener noreferrer" class="svc-btn click-target">💬 Order via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="svc-card click-target reveal">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80" alt="Ready-to-Wear & Diaspora" loading="lazy">
+          <div class="svc-overlay"></div>
+          <div class="svc-badge">Global</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">06</div>
+          <h3 class="svc-title">Ready-to-Wear & Diaspora</h3>
+          <p class="svc-desc">Pre-made collections and custom orders shipped internationally to Nigerians worldwide.</p>
+          <ul class="svc-list">
+            <li>Online Orders</li>
+            <li>International Shipping</li>
+            <li>Seasonal Collections</li>
+            <li>Fashion Gift Boxes</li>
+          </ul>
+          <a href="https://wa.me/2349022005469?text=Hi!%20I%20want%20to%20order%20Ready-to-Wear%20from%20MUHYATIM%20EMPIRE." target="_blank" rel="noopener noreferrer" class="svc-btn click-target">💬 Order via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- GALLERY_CONTENT -->
+  <section id="gallery">
+    <div class="sec-tag reveal" style="justify-content:center; margin-bottom:12px;">Product Gallery</div>
+    <h2 class="sec-title reveal">Our <i>Collections</i></h2>
+    <p class="sec-desc reveal" style="margin: 0 auto;">Explore our craftsmanship — from traditional Nigerian ceremonial wear to contemporary fashion.</p>
+    
+    <div class="gal-tabs reveal">
+      <button class="gtab active click-target" onclick="filterGallery('all', this)">All</button>
+      <button class="gtab click-target" onclick="filterGallery('tailoring', this)">Tailoring</button>
+      <button class="gtab click-target" onclick="filterGallery('bridal', this)">Bridal</button>
+      <button class="gtab click-target" onclick="filterGallery('corporate', this)">Corporate</button>
+      <button class="gtab click-target" onclick="filterGallery('embroidery', this)">Embroidery</button>
+      <button class="gtab click-target" onclick="filterGallery('laser', this)">Laser & Print</button>
+    </div>
+    
+    <div class="gal-grid">
+      <div class="gal-item reveal click-target" data-cat="tailoring" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b5d8a?w=500&q=80" alt="Agbada Collection" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Tailoring</div>
+          <div class="gal-name">Agbada Collection</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="tailoring" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500&q=80" alt="Senator Kaftan" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Tailoring</div>
+          <div class="gal-name">Senator Kaftan</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="bridal" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&q=80" alt="Bridal Package" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Bridal</div>
+          <div class="gal-name">Bridal Package</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="bridal" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1565378370284-a2d3ebd01ad5?w=500&q=80" alt="Asoebi Set" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Bridal</div>
+          <div class="gal-name">Asoebi Set</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="corporate" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80" alt="Office Uniform" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Corporate</div>
+          <div class="gal-name">Office Uniform</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="corporate" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80" alt="Branded Workwear" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Corporate</div>
+          <div class="gal-name">Branded Workwear</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="embroidery" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=500&q=80" alt="Logo Embroidery" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Embroidery</div>
+          <div class="gal-name">Logo Embroidery</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="embroidery" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500&q=80" alt="Monogram Detail" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Embroidery</div>
+          <div class="gal-name">Monogram Detail</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="laser" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=500&q=80" alt="DTG Print" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Laser & Print</div>
+          <div class="gal-name">DTG Print</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="laser" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&q=80" alt="Laser Engraving" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Laser & Print</div>
+          <div class="gal-name">Laser Engraving</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="tailoring" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?w=500&q=80" alt="Ankara Dress" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Tailoring</div>
+          <div class="gal-name">Ankara Dress</div>
+        </div>
+      </div>
+      <div class="gal-item reveal click-target" data-cat="bridal" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?w=500&q=80" alt="Wedding Aso-Oke" loading="lazy">
+        <div class="gal-overlay"></div>
+        <div class="gal-label">
+          <div class="gal-cat">Bridal</div>
+          <div class="gal-name">Wedding Aso-Oke</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <div class="lb-content">
+      <button class="lb-close click-target" onclick="closeLightbox()">×</button>
+      <img src="" alt="View" class="lb-img" id="lb-img">
+    </div>
+    <button class="lb-prev click-target" onclick="lbNav(-1)">←</button>
+    <button class="lb-next click-target" onclick="lbNav(1)">→</button>
+  </div>
+
+<!-- STUDIO_CONTENT -->
+  <section id="studio">
+    <div class="studio-grid">
+      <div class="stu-left reveal-left">
+        <div class="sec-tag">The Workshop</div>
+        <h2 class="sec-title">30+ <i>Machines</i>. One Roof.</h2>
+        <p class="cormorant" style="font-size:18px; color:var(--muted); font-style:italic; line-height:1.6;">Our ₦50M investment in cutting-edge equipment means your garment is made with the same precision as any international fashion house.</p>
+        
+        <div class="mach-list">
+          <div class="mach-row"><span class="mach-num">01</span> Industrial Sewing Machine <span class="mach-bdg">CORE</span> <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">02</span> Overlock / Serger Machine <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">03</span> Embroidery Machine <span class="mach-bdg">FLAGSHIP</span> <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">04</span> Laser Engraving Machine <span class="mach-bdg">FLAGSHIP</span> <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">05</span> DTG (Direct-to-Garment) Printer <span class="mach-bdg">FLAGSHIP</span> <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">06</span> Heat Press Machine <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">07</span> Screen Printing Equipment <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">08</span> Cutting Plotter <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">09</span> Rhinestone Press Machine <span class="mach-arr">→</span></div>
+          <div class="mach-row"><span class="mach-num">10</span> Steam Iron Press <span class="mach-bdg">FINISHING</span> <span class="mach-arr">→</span></div>
+        </div>
+      </div>
+      
+      <div class="stu-right reveal-right">
+        <div class="stu-box">
+          <div class="stu-q cormorant">"Every machine in our studio exists for one reason — to make your garment a statement that the world cannot ignore."</div>
+          <div class="stu-attr">— Founder, MUHYATIM EMPIRE</div>
+          <div class="gold-div" style="margin: 40px 0;"></div>
+          <div class="stu-badges">
+            <div class="s-bdg">ISO-Grade Cutting</div>
+            <div class="s-bdg">Digital Embroidery</div>
+            <div class="s-bdg">UV Laser Precision</div>
+            <div class="s-bdg">Direct-to-Garment</div>
+            <div class="s-bdg">Rhinestone Art</div>
+            <div class="s-bdg">Heat Transfer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stu-stats reveal">
+      <div>
+        <div class="ss-num" data-target="30">0</div><span style="color:var(--gold); font-size:32px; font-weight:900; font-family:'Cinzel';">+</span>
+        <div class="ss-lbl">Industrial Machines</div>
+      </div>
+      <div>
+        <span style="color:var(--gold); font-size:32px; font-weight:900; font-family:'Cinzel';">₦</span><div class="ss-num" style="display:inline-block;" data-target="50">0</div><span style="color:var(--gold); font-size:32px; font-weight:900; font-family:'Cinzel';">M</span>
+        <div class="ss-lbl">Studio Investment</div>
+      </div>
+      <div>
+        <div class="ss-num" data-target="6">0</div>
+        <div class="ss-lbl">Service Specialties</div>
+      </div>
+      <div>
+        <div class="ss-num" data-target="100">0</div><span style="color:var(--gold); font-size:32px; font-weight:900; font-family:'Cinzel';">%</span>
+        <div class="ss-lbl">Nigeria Made</div>
+      </div>
+    </div>
+  </section>
+
+<!-- WHY_CONTENT -->
+  <section id="why">
+    <div class="sec-tag reveal">Why MUHYATIM EMPIRE</div>
+    <h2 class="sec-title reveal">Built Different. Built <i>Better.</i></h2>
+    
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <div class="why-num"><span class="counter" data-target="500">0</span>+</div>
+        <div class="why-lbl">Happy Clients</div>
+        <div class="why-desc">From Abuja to Atlanta — our clients trust us with their biggest moments.</div>
+      </div>
+      <div class="why-card reveal" style="transition-delay: 0.1s;">
+        <div class="why-icon">📐</div>
+        <div class="why-num"><span class="counter" data-target="30">0</span>+</div>
+        <div class="why-lbl">Studio Machines</div>
+        <div class="why-desc">Industrial-grade precision equipment under one roof in Nigeria.</div>
+      </div>
+      <div class="why-card reveal" style="transition-delay: 0.2s;">
+        <div class="why-icon">🌍</div>
+        <div class="why-num"><span class="counter" data-target="15">0</span>+</div>
+        <div class="why-lbl">Countries Served</div>
+        <div class="why-desc">Nigerian diaspora worldwide receive our premium fashion.</div>
+      </div>
+      <div class="why-card reveal" style="transition-delay: 0.3s;">
+        <div class="why-icon">⚡</div>
+        <div class="why-num"><span class="counter" data-target="72">0</span>hr</div>
+        <div class="why-lbl">Turnaround</div>
+        <div class="why-desc">Express orders for urgent occasions without sacrificing quality.</div>
+      </div>
+    </div>
+  </section>
+<!-- TESTIMONIALS_CONTENT -->
+  <section id="testimonials">
+    <div class="tm-header">
+      <div class="sec-tag reveal" style="justify-content:center;">Client Stories</div>
+      <h2 class="sec-title reveal">What Our <i>Clients</i> Say</h2>
+    </div>
+    
+    <div class="tm-grid">
+      <div class="tm-card reveal">
+        <div class="tm-quote-mark">"</div>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text cormorant">"The Agbada MUHYATIM EMPIRE made for my wedding was beyond my imagination. The embroidery work was flawless. I wore it to 3 events and received compliments every single time."</p>
+        <div class="tm-author">
+          <div class="tm-av">AM</div>
+          <div>
+            <div class="tm-name">A.M.</div>
+            <div class="tm-role">Groom, Lagos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm-card reveal" style="transition-delay: 0.1s;">
+        <div class="tm-quote-mark">"</div>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text cormorant">"We ordered 200 corporate uniforms with logo embroidery. Delivered on time, impeccable finish. Our staff look like they work for a Fortune 500 company."</p>
+        <div class="tm-author">
+          <div class="tm-av">CM</div>
+          <div>
+            <div class="tm-name">Corporate Manager</div>
+            <div class="tm-role">Abuja</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm-card reveal" style="transition-delay: 0.2s;">
+        <div class="tm-quote-mark">"</div>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text cormorant">"I'm in the UK and needed traditional attire for my introduction ceremony. They shipped to London within days. Perfectly tailored from measurements sent via WhatsApp."</p>
+        <div class="tm-author">
+          <div class="tm-av">ND</div>
+          <div>
+            <div class="tm-name">Nigerian Diaspora</div>
+            <div class="tm-role">London, UK</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm-card reveal">
+        <div class="tm-quote-mark">"</div>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text cormorant">"The DTG printing and laser engraving on our event merchandise was outstanding. Will definitely use MUHYATIM EMPIRE for all future events."</p>
+        <div class="tm-author">
+          <div class="tm-av">EP</div>
+          <div>
+            <div class="tm-name">Event Planner</div>
+            <div class="tm-role">Port Harcourt</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm-card reveal" style="transition-delay: 0.1s;">
+        <div class="tm-quote-mark">"</div>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text cormorant">"Booked the full bridal package — bride, groom, and all family asoebi. Every outfit matched perfectly. Absolute professionals."</p>
+        <div class="tm-author">
+          <div class="tm-av">B</div>
+          <div>
+            <div class="tm-name">Bride</div>
+            <div class="tm-role">Kano</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm-card reveal" style="transition-delay: 0.2s;">
+        <div class="tm-quote-mark">"</div>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text cormorant">"From consultation to delivery — the process was smooth. The quality speaks for itself. This is not just tailoring, this is art."</p>
+        <div class="tm-author">
+          <div class="tm-av">FE</div>
+          <div>
+            <div class="tm-name">Fashion Enthusiast</div>
+            <div class="tm-role">Diaspora — USA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- PROCESS_CONTENT -->
+  <section id="process">
+    <div class="pr-header">
+      <div class="sec-tag reveal" style="justify-content:center;">How It Works</div>
+      <h2 class="sec-title reveal">Your Journey to a <i>Perfect</i> Garment</h2>
+      <p class="sec-desc reveal" style="margin: 0 auto;">From initial consultation to final delivery — a seamless 4-step experience.</p>
+    </div>
+    
+    <div class="pr-flow">
+      <div class="pr-step reveal">
+        <div class="pr-circle">🗓</div>
+        <div class="pr-title">1. Consultation</div>
+        <div class="pr-desc">Contact us via WhatsApp, call, or the booking form. Describe your vision, occasion, and requirements.</div>
+      </div>
+      <div class="pr-step reveal" style="transition-delay: 0.1s;">
+        <div class="pr-circle">📏</div>
+        <div class="pr-title">2. Measurements & Design</div>
+        <div class="pr-desc">Share your measurements or visit our studio. Choose fabrics, styles, embroidery, and personalization.</div>
+      </div>
+      <div class="pr-step reveal" style="transition-delay: 0.2s;">
+        <div class="pr-circle">✂️</div>
+        <div class="pr-title">3. Crafting</div>
+        <div class="pr-desc">Our master tailors and machines work to bring your design to life with precision and care.</div>
+      </div>
+      <div class="pr-step reveal" style="transition-delay: 0.3s;">
+        <div class="pr-circle">📦</div>
+        <div class="pr-title">4. Delivery</div>
+        <div class="pr-desc">Collect from our studio or receive delivery anywhere in Nigeria or internationally.</div>
+      </div>
+    </div>
+  </section>
+
+<!-- SOCIAL_CONTENT -->
+  <section id="social">
+    <div class="soc-header">
+      <div class="sec-tag reveal" style="justify-content:center;">Follow Our Journey</div>
+      <h2 class="sec-title reveal">Join the MUHYATIM EMPIRE Movement</h2>
+    </div>
+    
+    <div class="soc-grid">
+      <a href="#" class="soc-card ig reveal click-target">
+        <div class="soc-icon">📸</div>
+        <div class="soc-name">INSTAGRAM</div>
+        <div class="soc-handle">@muhyatim_empire</div>
+        <div class="soc-desc">Daily inspiration, behind-the-scenes studio moments, client showcases, and new collections.</div>
+        <div class="soc-cta">Follow on Instagram →</div>
+      </a>
+      
+      <a href="#" class="soc-card fb reveal click-target" style="transition-delay: 0.1s;">
+        <div class="soc-icon">👍</div>
+        <div class="soc-name">FACEBOOK</div>
+        <div class="soc-handle">MUHYATIM EMPIRE</div>
+        <div class="soc-desc">Stay updated with our latest collections, promotions, events, and client testimonials.</div>
+        <div class="soc-cta">Like on Facebook →</div>
+      </a>
+      
+      <a href="#" class="soc-card tk reveal click-target" style="transition-delay: 0.2s;">
+        <div class="soc-icon">🎵</div>
+        <div class="soc-name">TIKTOK</div>
+        <div class="soc-handle">@muhyatim_empire</div>
+        <div class="soc-desc">Watch our tailoring process, machine videos, before & after reveals, and fashion content.</div>
+        <div class="soc-cta">Follow on TikTok →</div>
+      </a>
+    </div>
+  </section>
+<!-- CONTACT_CONTENT -->
+  <section id="contact">
+    <div class="ct-grid">
+      <div class="ct-info reveal-left">
+        <div class="sec-tag">Get In Touch</div>
+        <h2 class="sec-title">Book Your <i>Consultation</i></h2>
+        <p class="body cormorant">Whether you have a vision in mind or need guidance — our team is ready. Reach us via WhatsApp for instant response, or submit the booking form.</p>
+        <div class="gold-div"></div>
+        <div class="ct-list">
+          <div class="ctl-box">
+            <div class="ctl-ic">📱</div>
+            <div class="ctl-txt">
+              <div class="lbl">WhatsApp</div>
+              <a href="https://wa.me/2349022005469" target="_blank" rel="noopener noreferrer" class="val click-target">+234 902 200 5469</a>
+            </div>
+          </div>
+          <div class="ctl-box">
+            <div class="ctl-ic">📞</div>
+            <div class="ctl-txt">
+              <div class="lbl">Phone</div>
+              <div class="val">+234 902 200 5469</div>
+            </div>
+          </div>
+          <div class="ctl-box">
+            <div class="ctl-ic">📧</div>
+            <div class="ctl-txt">
+              <div class="lbl">Email</div>
+              <div class="val" style="font-family:'Jost'">info@muhyatimempire.com</div>
+            </div>
+          </div>
+          <div class="ctl-box">
+            <div class="ctl-ic">📍</div>
+            <div class="ctl-txt">
+              <div class="lbl">Location</div>
+              <div class="val" style="font-family:'Jost'">Abuja, Nigeria (Studio visits by appointment)</div>
+            </div>
+          </div>
+          <div class="ctl-box">
+            <div class="ctl-ic">🕐</div>
+            <div class="ctl-txt">
+              <div class="lbl">Hours</div>
+              <div class="val" style="font-family:'Jost'">Mon–Sat: 8:00 AM – 7:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ct-form-box reveal-right">
+        <h3 class="cf-title">Submit Booking Request</h3>
+        <p class="cf-sub">We respond within 2 hours via WhatsApp</p>
+        
+        <form onsubmit="handleSubmit(event, this)">
+          <div class="f-row">
+            <input type="text" class="f-input" placeholder="Full Name" required>
+            <input type="tel" class="f-input" placeholder="Phone Number" required>
+          </div>
+          <div class="f-row">
+            <input type="email" class="f-input" placeholder="Email Address" required>
+            <select class="f-input" required>
+              <option value="" disabled selected>Select Service...</option>
+              <option value="Custom Tailoring">Custom Tailoring</option>
+              <option value="Embroidery & Monogram">Embroidery & Monogram</option>
+              <option value="Laser Engraving & DTG">Laser Engraving & DTG</option>
+              <option value="Bridal & Events">Bridal & Events</option>
+              <option value="Corporate Uniforms">Corporate Uniforms</option>
+              <option value="Ready-to-Wear">Ready-to-Wear</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="f-row">
+            <input type="text" class="f-input" placeholder="Event/Occasion">
+            <input type="text" class="f-input" placeholder="Preferred Timeline">
+          </div>
+          <div class="f-full">
+            <textarea class="f-input" placeholder="Your Vision / Requirements" required></textarea>
+          </div>
+          <div class="f-full">
+            <label class="f-upload click-target" id="drop-zone" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)">
+              <div class="f-up-ic">📸</div>
+              <div class="f-up-title">Upload Inspiration Images</div>
+              <div class="f-up-hint">JPG, PNG up to 5MB each (max 6 images)</div>
+              <input type="file" id="file-input" multiple accept="image/*" onchange="handleFiles(this.files)">
+            </label>
+            <div class="f-preview" id="previews"></div>
+          </div>
+          <div class="f-actions">
+            <button type="submit" class="btn-submit click-target">Send Booking Request →</button>
+            <a href="https://wa.me/2349022005469?text=Hello%20MUHYATIM%20EMPIRE%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" class="btn-submit click-target" style="background:var(--wa); color:white;">💬 Book via WhatsApp</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER_CONTENT -->
+  <footer>
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="#" class="ft-logo click-target">MUHYATIM EMPIRE</a>
+        <p class="ft-desc">Nigeria's premier luxury fashion house. Crafted with precision, culture, and global ambition.</p>
+        <div class="ft-social">
+          <a href="#" class="ft-soc-link click-target">📸</a>
+          <a href="#" class="ft-soc-link click-target">👍</a>
+          <a href="#" class="ft-soc-link click-target">🎵</a>
+          <a href="https://wa.me/2349022005469" target="_blank" rel="noopener noreferrer" class="ft-soc-link click-target">💬</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">SERVICES</div>
+        <div class="ft-links">
+          <a href="#services" class="ft-link click-target">Custom Tailoring</a>
+          <a href="#services" class="ft-link click-target">Embroidery & Monogram</a>
+          <a href="#services" class="ft-link click-target">Laser Engraving</a>
+          <a href="#services" class="ft-link click-target">Bridal & Events</a>
+          <a href="#services" class="ft-link click-target">Corporate Uniforms</a>
+          <a href="#services" class="ft-link click-target">Diaspora Shipping</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">COLLECTIONS</div>
+        <div class="ft-links">
+          <a href="#gallery" class="ft-link click-target">Agbada & Kaftan</a>
+          <a href="#gallery" class="ft-link click-target">Ankara Styles</a>
+          <a href="#gallery" class="ft-link click-target">Asoebi Sets</a>
+          <a href="#gallery" class="ft-link click-target">Branding Gallery</a>
+          <a href="#gallery" class="ft-link click-target">Corporate Line</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">COMPANY</div>
+        <div class="ft-links">
+          <a href="#about" class="ft-link click-target">About Us</a>
+          <a href="#studio" class="ft-link click-target">Our Studio</a>
+          <a href="#process" class="ft-link click-target">How It Works</a>
+          <a href="#testimonials" class="ft-link click-target">Client Stories</a>
+          <a href="#contact" class="ft-link click-target">Book Consultation</a>
+          <a href="https://wa.me/2349022005469" target="_blank" rel="noopener noreferrer" class="ft-link click-target">WhatsApp: 0902 200 5469</a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <div class="ft-copy">© 2025 <span>MUHYATIM EMPIRE</span>. All rights reserved. Proudly Made in Nigeria.</div>
+      <div class="ft-slogan">Crafted in Nigeria. Worn by the World.</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2349022005469?text=Hello%20MUHYATIM%20EMPIRE%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="wa-float click-target">💬</a>
+  <div class="wa-tooltip">Chat with us!</div>
+
+<!-- JAVASCRIPT_CONTENT -->
+  <script>
+    // 1. Custom Cursor
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+    
+    if (window.matchMedia("(pointer: fine)").matches) {
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if(cursorDot) {
+          cursorDot.style.left = mouseX + 'px';
+          cursorDot.style.top = mouseY + 'px';
+        }
+      });
+      const render = () => {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        if(cursorRing) {
+          cursorRing.style.left = ringX + 'px';
+          cursorRing.style.top = ringY + 'px';
+        }
+        requestAnimationFrame(render);
+      };
+      requestAnimationFrame(render);
+
+      const interactives = document.querySelectorAll('.click-target, a, button, .svc-card, .gal-item');
+      interactives.forEach(el => {
+        el.addEventListener('mouseenter', () => cursorRing?.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => cursorRing?.classList.remove('hovered'));
+      });
+    }
+
+    // 2. Navbar Scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 3. Mobile Menu
+    const mobileNav = document.getElementById('mobileNav');
+    function toggleMenu() {
+      if(mobileNav.classList.contains('open')) {
+        mobileNav.classList.remove('open');
+      } else {
+        mobileNav.classList.add('open');
+      }
+    }
+
+    // 4. Scroll Reveal
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries, ob) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          ob.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+    // 5. Animated Counters
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('[data-target]');
+          counters.forEach(counter => {
+            const updateCount = () => {
+              const target = +counter.getAttribute('data-target');
+              const count = +counter.innerText;
+              const inc = target / 40;
+              if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 28);
+              } else {
+                counter.innerText = target;
+              }
+            };
+            updateCount();
+          });
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const whySection = document.getElementById('why');
+    const studioSection = document.getElementById('studio');
+    if(whySection) counterObserver.observe(whySection);
+    if(studioSection) counterObserver.observe(studioSection);
+
+    // 6. Gallery Filter
+    function filterGallery(category, btn) {
+      document.querySelectorAll('.gtab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const items = document.querySelectorAll('.gal-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-cat') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // 7. Lightbox
+    let galleryImages = [];
+    let currentImageIdx = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+
+    function openLightbox(element) {
+      const items = document.querySelectorAll('.gal-item');
+      galleryImages = [];
+      let idxCount = 0;
+      items.forEach(item => {
+        if (item.style.display !== 'none') {
+          galleryImages.push(item.querySelector('img').src);
+          if (item === element) {
+            currentImageIdx = idxCount;
+          }
+          idxCount++;
+        }
+      });
+      lbImg.src = galleryImages[currentImageIdx];
+      lightbox.classList.add('show');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('show');
+    }
+
+    function lbNav(dir) {
+      currentImageIdx += dir;
+      if (currentImageIdx < 0) currentImageIdx = galleryImages.length - 1;
+      if (currentImageIdx >= galleryImages.length) currentImageIdx = 0;
+      lbImg.src = galleryImages[currentImageIdx];
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('show')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lbNav(-1);
+      if (e.key === 'ArrowRight') lbNav(1);
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // 8. File Upload
+    const uploadedFiles = [];
+    const maxFiles = 6;
+    const dropZone = document.getElementById('drop-zone');
+    const previews = document.getElementById('previews');
+
+    function onDragOver(e) { e.preventDefault(); dropZone.classList.add('dragover'); }
+    function onDragLeave(e) { e.preventDefault(); dropZone.classList.remove('dragover'); }
+    function onDrop(e) {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      handleFiles(e.dataTransfer.files);
+    }
+    
+    function handleFiles(files) {
+      Array.from(files).forEach(file => {
+        if (uploadedFiles.length >= maxFiles) return;
+        if (!file.type.startsWith('image/')) return;
+        if (file.size > 5 * 1024 * 1024) return;
+        
+        uploadedFiles.push(file);
+        const idx = uploadedFiles.length - 1;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const div = document.createElement('div');
+          div.className = 'fp-item';
+          div.innerHTML = `
+            <img src="${e.target.result}" alt="Preview">
+            <button type="button" class="fp-rm click-target" onclick="removePreview(${idx}, this.parentElement)">×</button>
+          `;
+          previews.appendChild(div);
+        }
+        reader.readAsDataURL(file);
+      });
+    }
+    
+    function removePreview(idx, el) {
+      uploadedFiles[idx] = null;
+      el.remove();
+    }
+
+    // 9. Form Submit
+    function handleSubmit(e, form) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerText;
+      btn.innerText = "Sending...";
+      btn.style.opacity = "0.7";
+      
+      // Simulate API call
+      setTimeout(() => {
+        btn.innerText = "✓ Booking Received!";
+        btn.style.background = "var(--green-light)";
+        btn.style.color = "var(--white)";
+        btn.style.opacity = "1";
+        
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.background = "";
+          btn.style.color = "";
+          form.reset();
+          previews.innerHTML = '';
+          uploadedFiles.length = 0;
+        }, 5000);
+      }, 1800);
+    }
+  </script>
+</body>
+</html>
